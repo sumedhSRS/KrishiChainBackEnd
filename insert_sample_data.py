@@ -12,10 +12,10 @@ def insert_sample_data():
 
     # Sample users
     users = [
-        ('farmer1', 'farmer1@krishichain.com', hash_password('password123'), 'farmer', 'राजेश कुमार', '9876543210', 'Village Khetpura, Punjab'),
-        ('distributor1', 'dist1@krishichain.com', hash_password('password123'), 'distributor', 'सुनील गुप्ता', '9876543211', 'Delhi Warehouse, Delhi'),
-        ('retailer1', 'retail1@krishichain.com', hash_password('password123'), 'retailer', 'प्रिया शर्मा', '9876543212', 'Fresh Mart, Mumbai'),
-        ('customer1', 'customer1@krishichain.com', hash_password('password123'), 'customer', 'अमित वर्मा', '9876543213', 'Andheri, Mumbai')
+        ('farmer1', 'farmer1@krishichain.com', hash_password('password123'), 'farmer', 'The Farmer', '9876543210', 'Village Khetpura, Punjab'),
+        ('distributor1', 'dist1@krishichain.com', hash_password('password123'), 'distributor', 'The Distributor', '9876543211', 'Delhi Warehouse, Delhi'),
+        ('retailer1', 'retail1@krishichain.com', hash_password('password123'), 'retailer', 'The Retailer', '9876543212', 'Fresh Mart, Mumbai'),
+        ('customer1', 'customer1@krishichain.com', hash_password('password123'), 'customer', 'The Customer', '9876543213', 'Andheri, Mumbai')
     ]
 
     for user in users:
