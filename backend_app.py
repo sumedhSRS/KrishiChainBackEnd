@@ -13,7 +13,8 @@ import json
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
-CORS(app)
+CORS(app, supports_credentials=True, origins=["https://sumedhsrs.github.io", "http://localhost:3000", "http://localhost:5000"])
+
 
 DATABASE = 'krishichain.db'
 
