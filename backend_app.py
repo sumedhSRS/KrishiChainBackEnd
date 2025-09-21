@@ -443,12 +443,14 @@ def get_dashboard(role):
 def health_check():
     return jsonify({'status': 'healthy', 'message': 'KrishiChain API is running'}), 200
 
-if __name__ == '__main__':
-    # Initialize database
+def create_app():
+    """Application factory function"""
     if not os.path.exists(DATABASE):
         init_database()
         print("Database initialized!")
+    return app
 
+if __name__ == '__main__':
     print("Starting KrishiChain Backend API...")
     print("API Documentation:")
     print("- POST /api/register - Register new user")
@@ -460,8 +462,15 @@ if __name__ == '__main__':
     print("- GET /api/verify-product/<qr_code> - Verify product")
     print("- GET /api/dashboard/<role> - Get dashboard data")
     print("- GET /api/health - Health check")
+    
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_ENV') != 'production'
+    app.run(host='0.0.0.0', port=port, debug=debug)
 
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# Initialize database when module loads
+if not os.path.exists(DATABASE):
+    init_database()
+    print("Database initialized!")
     
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
