@@ -155,8 +155,8 @@ def logout():
 def register_product():
     """Farmer registers new product"""
     try:
-        if 'user_id' not in session or session.get('role') != 'farmer':
-            return jsonify({'error': 'Authentication required'}), 401
+    #    if 'user_id' not in session or session.get('role') != 'farmer':
+    #        return jsonify({'error': 'Authentication required'}), 401
 
         data = request.json
         product_name = data.get('product_name')
@@ -187,14 +187,14 @@ def register_product():
                        (product_id, farmer_id, quantity, unit, farmer_price, 
                         farm_location, harvest_date, farming_method)
                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)''',
-                    (product_id, session['user_id'], quantity, unit, farmer_price,
+                    (product_id, 1, quantity, unit, farmer_price,
                      farm_location, harvest_date, farming_method))
 
         # Add to supply chain tracking
         conn.execute('''INSERT INTO supply_chain_tracking 
                        (product_id, stage, user_id, action, details)
                        VALUES (?, ?, ?, ?, ?)''',
-                    (product_id, 'farmer', session['user_id'], 'Product Registered',
+                    (product_id, 'farmer', 1, 'Product Registered',
                      json.dumps(data)))
 
         conn.commit()
