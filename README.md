@@ -66,10 +66,10 @@ After running the sample data script, you can use these test accounts:
 
 | Role | Username | Password | Description |
 |------|----------|----------|-------------|
-| Farmer | farmer1 | password123 | राजेश कुमार |
-| Distributor | distributor1 | password123 | सुनील गुप्ता |
-| Retailer | retailer1 | password123 | प्रिया शर्मा |
-| Customer | customer1 | password123 | अमित वर्मा |
+| Farmer | farmer1 | password123 | The Farmer |
+| Distributor | distributor1 | password123 | The Distributor |
+| Retailer | retailer1 | password123 | The Retailer |
+| Customer | customer1 | password123 | The Customer |
 
 ## 🛠️ API Endpoints
 
